@@ -2,6 +2,8 @@ body {
   background-image: url("assets/sky.gif");
   background-size: cover;
   height: 100vh;
+  font-family: "Bitcount Ink", system-ui;
+  color: red; 
 }
 
 img {
@@ -16,9 +18,13 @@ img {
 img:hover {
   height: 400px;
   filter: grayscale(0%);
+  
   /*   border: 1px solid red; */
 }
 
+#specialImg:hover{
+  transform: rotate(1080deg);
+}
 p:hover {
   /*   transform: rotate(5deg); */
   letter-spacing: 1em;
@@ -41,12 +47,12 @@ a {
 
 @keyframes coolAnimation {
   0% {
-    color: red;
+    color: hotpink;
   }
   50% {
-    color: green;
+    color: darkmagenta;
   }
   100% {
-    color: blue;
+    color: darkblue;
   }
 }
