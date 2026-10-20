@@ -1,45 +1,71 @@
-//Inspired by Mo Chuang's work titled "DIVERSE DEMOGRAPHIC OF AMERICA" but with a different perspective. This crowd of bodies are all uniform, besides their colors, saluting and all moving together in a still codified and routine pathway. I think this is a nod to the kind of performative advocacy of diversity that still maintains control over bodies and values homogeneity. Anything or anyone that dares to stand out is a disruption to that alleged "diversity." The bodies are traveling upward continuously and if the user hovers the mouse over the canvas, bodies near the mouse will get bigger/"stand out."
-let bodyColors = ["white", "brown", "orange", "beige", "black"];
-let moveY = 0;
+let sleet = [];
+const numberOfStreaks = 450;
+
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(windowWidth, windowHeight);
+  strokeCap (ROUND);
+
+  for (let i = 0; i<numberOfStreaks; i++) {
+    sleet.push(new Streak());
+  }
 }
 
 function draw() {
-  background(200);
-  moveY -= 1.5; //makes crowd travel upward
-
-  if (moveY <= -100) {
-    moveY = 0; //sends crowd back to the bottom
+  background(0);
+  let step = min(deltaTime/16.67,2);
+  for (let streak of sleet) {
+    streak.move(step);
+    streak.show();
   }
-  for (let x = 0; x <= width + 100; x += 100) {
-    for (let y = 0; y <= height + 100; y += 100) {
-      let c = bodyColors[(x / 100 + y / 100) % bodyColors.length];
-      let personY = y + moveY;
-      let d = dist(mouseX, mouseY, x + 50, personY + 70);
-      
-      let size = 1;
-      if (d < 125) {
-        size = 1.4;
-      }
-      push();
-      translate(x + 50, personY + 70);
-      scale(size);
-      translate(-50, -70);
-
-      fill(c);
-      stroke(110);
-      strokeWeight(2);
-      circle(50, 30, 55);
-      rect(22,55, 56, 65);
-      
-      stroke(c);
-      strokeWeight(12);
-      line(75, 70, 88, 58);
-      line(88, 58, 78, 42);
-
-      pop();
+}
+class Streak {
+  constructor() {
+    this.setAppearance();
+    this.x=random(width);
+    this.y=random(height);
+    
+  }
+  setAppearance() {
+    this.length = random(20,85);
+    this.speed = random(10,23);
+    this.brightness = random(70,220);
+    this.weight = random(0.5,1.2);
+  }
+move(step) {
+  this.x -= this.speed*0.25*step;
+  this.y += this.speed * step;
+  if (
+      this.y > height + this.length ||
+      this.x < -this.length
+    ) {
+      this.reset();
     }
+  }
+
+  reset() {
+    this.setAppearance();
+    let topWeight = width;
+    let rightWeight = height * 0.25;
+
+    if (random(topWeight + rightWeight) < topWeight) {
+      this.x = random(width);
+      this.y = -this.length;
+    } else {
+      this.x = width + this.length * 0.25;
+      this.y = random(height);
+    }
+  }
+
+  show() {
+    stroke(255, this.brightness);
+    strokeWeight(this.weight);
+
+    line(
+      this.x,
+      this.y,
+      this.x + this.length * 0.25,
+      this.y - this.length
+    );
   }
 }
