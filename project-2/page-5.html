@@ -5,8 +5,41 @@
         <title>I Should Have Been More Grateful</title>
         <link rel="stylesheet" href="style.css" />
     </head>
-    <body class="stillness-page">
-        <div class="stillness-collage" id="collage"></div>
-        <script src="stillness.js"></script>
+    <a class="remember-link" href="page-4.html">forget</a>
+    <body class="still-page">
+        <audio id="serenity-audio" preload="auto">
+            <source src="serenitysound.mp4" type="audio/mp4" />
+        </audio>
+
+        <section class="still-text">
+            <p>
+                Remember when you were the most at peace. When
+                everything felt so still... and so beautiful. And you were finally able to actually see and appreciate
+                what was around you.
+            </p>
+        </section>
+
+        <section class="still-gallery">
+            <img src="moncalvocity.jpeg" alt="A peaceful place" />
+            <img src="theeye.jpeg" alt="A bright room" />
+            <img src="sandiego.jpeg" alt="The coast" />
+            <img src="cherryblossom.jpeg" alt="Cherry blossoms" />
+            <img src="la.jpeg" alt="A Los Angeles street" />
+        </section>
+
+        <script>
+            const audio = document.getElementById("serenity-audio");
+
+            window.addEventListener("load", () => {
+                audio.play().catch(() => {
+                    console.log("Autoplay was blocked; click Remember to start audio.");
+                });
+            });
+
+            document.getElementById("remember-link").addEventListener("click", () => {
+                audio.currentTime = 0;
+                audio.play();
+            });
+        </script>
     </body>
 </html>

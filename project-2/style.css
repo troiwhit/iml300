@@ -136,7 +136,7 @@ body {
 }
 
 canvas {
-    border: 1px solid red;
+    border: black;
     top: 0;
     left: 0;
     position: fixed;
@@ -184,6 +184,7 @@ canvas {
 .memory-link {
     position: relative;
     z-index: 1;
+    color: ghostwhite;
 }
 
 @keyframes column-falls {
@@ -265,9 +266,7 @@ body.memories-page {
     letter-spacing: 0.04em;
 }
 
-/* ==========================================
-   FALLING FIGURE
-   ========================================== */
+/*FALLING FIGURE*/
 
 .memories-page .falling-figure {
     position: absolute;
@@ -294,10 +293,6 @@ body.memories-page {
         drop-shadow(0 0 24px rgba(150, 200, 255, 0.45));
 }
 
-/* ==========================================
-   MEMORY LINKS
-   ========================================== */
-
 .memories-page .memory {
     --size: clamp(125px, 16vw, 220px);
     --delay: 1s;
@@ -310,29 +305,22 @@ body.memories-page {
     text-align: center;
     text-decoration: none;
 
-    /* Hidden links cannot be clicked or focused yet. */
     visibility: hidden;
 
     animation: memory-make-visible 0s linear var(--delay) forwards;
 }
-
-/* Happy: upper left, appears first. */
 .memories-page .memory-happy {
     top: 20%;
     left: 12%;
 
     --delay: 1s;
 }
-
-/* Sad: upper right, appears second. */
 .memories-page .memory-sad {
     top: 26%;
     right: 12%;
 
     --delay: 4s;
 }
-
-/* Calm: lower left, appears third. */
 .memories-page .memory-calm {
     top: 65%;
     left: 29%;
@@ -340,10 +328,7 @@ body.memories-page {
     --delay: 7s;
 }
 
-/* ==========================================
-   EXPANDING WHITE BUBBLES
-   ========================================== */
-
+/*EXPANDING WHITE BUBBLES*/
 .memories-page .memory-orb {
     display: block;
     width: 100%;
@@ -361,8 +346,6 @@ body.memories-page {
 
     animation: memory-bloom 2.2s ease-in-out var(--delay) both;
 }
-
-/* The photograph fades into the expanding white circle. */
 .memories-page .memory-orb img {
     display: block;
 
@@ -376,7 +359,6 @@ body.memories-page {
     transition: filter 250ms ease;
 }
 
-/* Adjust which part of each image fills its circle. */
 .memories-page .memory-happy img {
     object-position: 50% 33%;
 }
@@ -388,10 +370,6 @@ body.memories-page {
 .memories-page .memory-calm img {
     object-position: 50% 57%;
 }
-
-/* ==========================================
-   MEMORY LABELS
-   ========================================== */
 
 .memories-page .memory-label {
     display: block;
@@ -405,10 +383,6 @@ body.memories-page {
     animation: memory-photo-reveal 1s ease calc(var(--delay) + 1.7s) both;
 }
 
-/* ==========================================
-   HOVER AND KEYBOARD FOCUS
-   ========================================== */
-
 .memories-page .memory:hover img,
 .memories-page .memory:focus-visible img {
     filter: brightness(1.18);
@@ -419,10 +393,6 @@ body.memories-page {
     outline-offset: 10px;
     border-radius: 12px;
 }
-
-/* ==========================================
-   ANIMATIONS
-   ========================================== */
 
 @keyframes memory-make-visible {
     to {
@@ -471,10 +441,6 @@ body.memories-page {
     }
 }
 
-/* ==========================================
-   SMALLER SCREENS
-   ========================================== */
-
 @media (max-width: 600px) {
     .memories-page .memory {
         --size: clamp(110px, 30vw, 160px);
@@ -504,10 +470,6 @@ body.memories-page {
     }
 }
 
-/* ==========================================
-   REDUCED MOTION
-   ========================================== */
-
 @media (prefers-reduced-motion: reduce) {
     .memories-page .memory,
     .memories-page .memory-orb,
@@ -532,272 +494,216 @@ body.memories-page {
         transition: none;
     }
 }
-.stillness-page {
-    margin: 0;
+.still-page {
     min-height: 100vh;
-    overflow: hidden;
-    background-color: black;
-    background-image: url("O28.jpeg");
-    background-size: cover;
-    background-position: center;
+    background: url("studio.jpeg") center / cover no-repeat;
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 7vh 8vw;
 }
 
-.stillness-collage {
-    position: fixed;
-    inset: 0;
+.still-text {
+    color: white;
+    font-size: clamp(1.5rem, 2.4vw, 2.5rem);
+    line-height: 1.5;
+    text-shadow: 0 2px 12px black;
+    max-width: 26rem;
 }
 
-.collage-item {
-    position: absolute;
-    width: 21vw;
-    max-width: 300px;
-    max-height: 38vh;
+.still-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    align-items: start;
+}
+
+.still-gallery img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.55);
     opacity: 0;
-    animation: photo-appears 2.5s ease forwards;
-}
-.still-top-left {
-  top: 8vh;
-  left: 4vw;
-  transform: rotate(-5deg);
+    transform: translateY(18px);
+    animation: photo-appears 0.8s ease forwards;
 }
 
-.still-top-center {
-  top: 4vh;
-  left: 50%;
-  transform: translateX(-50%) rotate(2deg);
+.still-gallery img:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.still-gallery img:nth-child(2) {
+    animation-delay: 2s;
+}
+.still-gallery img:nth-child(3) {
+    animation-delay: 4s;
+}
+.still-gallery img:nth-child(4) {
+    animation-delay: 6s;
+}
+.still-gallery img:nth-child(5) {
+    animation-delay: 8s;
 }
 
-.still-top-right {
-  top: 8vh;
-  right: 4vw;
-  transform: rotate(5deg);
+.still-gallery img:nth-child(4) {
+    grid-column: 1 / 2;
 }
 
-.still-right {
-  top: 39vh;
-  right: 2vw;
-  transform: rotate(5deg);
+.still-gallery img:nth-child(5) {
+    grid-column: 2 / 3;
 }
-
-.still-bottom-right {
-  bottom: 7vh;
-  right: 7vw;
-  transform: rotate(-4deg);
-}
-
-.still-bottom-center {
-  bottom: 3vh;
-  left: 50%;
-  transform: translateX(-50%) rotate(2deg);
-}
-
-.still-bottom-left {
-  bottom: 7vh;
-  left: 7vw;
-  transform: rotate(4deg);
-}
-
-.still-left {
-  top: 39vh;
-  left: 2vw;
-  transform: rotate(-5deg);
-}
-.music-prompt {
-    position: fixed;
-    bottom: 5vh;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    background: transparent;
-    color: ghostwhite;
-    border: 1px solid ghostwhite;
-    padding: 10px 22px;
-    letter-spacing: 3px;
-    font-family: "Times New Roman", Times, serif;
-    cursor: pointer;
-}
-
 @keyframes photo-appears {
     from {
         opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-.happiness-page {
-    min-height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-    background-color: #d58b48;
-
-    background-image: linear-gradient(rgba(84, 42, 16, 0.25), rgba(84, 42, 16, 0.25)), url("Happiest.JPG");
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.happiness-photo {
-    position: absolute;
-    width: 19vw;
-    max-width: 260px;
-    max-height: 31vh;
-    object-fit: cover;
-    opacity: 0;
-    border: 7px solid #fff8e7;
-    box-shadow: 0 10px 28px rgba(75, 32, 13, 0.42);
-    animation: happiness-appears 0.8s ease-out forwards;
-}
-
-@keyframes happiness-appears {
-    from {
-        opacity: 0;
+        transform: translateY(18px);
     }
 
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
-
-.happy-top-left {
-    top: 8vh;
-    left: 4vw;
-    transform: rotate(-6deg);
-}
-
-.happy-top-center {
-    top: 4vh;
+.remember-link {
+    position: fixed;
+    bottom: 24px;
     left: 50%;
-    transform: translateX(-50%) rotate(3deg);
+    transform: translateX(-50%);
+    z-index: 100;
+    
+    color: whitesmoke;
+    background: rgba (0,0,0,0.7);
+    padding: 8px 14px;
+    
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-.happy-top-right {
-    top: 8vh;
-    right: 4vw;
-    transform: rotate(6deg);
-}
-
-.happy-right {
-    top: 37vh;
-    right: 2vw;
-    transform: rotate(5deg);
-}
-
-.happy-bottom-right {
-    bottom: 5vh;
-    right: 7vw;
-    transform: rotate(-5deg);
-}
-
-.happy-bottom-center {
-    bottom: 2vh;
-    left: 50%;
-    transform: translateX(-50%) rotate(2deg);
-}
-
-.happy-bottom-left {
-    bottom: 5vh;
-    left: 7vw;
-    transform: rotate(5deg);
-}
-
-.happy-left {
-    top: 37vh;
-    left: 2vw;
-    transform: rotate(-5deg);
-}
-.sadness-page {
+body.happiness-page {
+    width: 100%;
+    height: 100vh;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
     overflow: hidden;
     position: relative;
-    background-color: #17191f;
 
-    /* Replace Sad.jpeg if your sadness-bubble image uses another filename */
-    background-image: linear-gradient(rgba(8, 11, 18, 0.42), rgba(8, 11, 18, 0.42)), url("Sad.jpeg");
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: #cfad88;
+    background-image: none;
 }
 
-.sadness-collage {
+.happiness-page #happinessCollage {
     position: fixed;
     inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.sadness-photo {
+.happiness-page #happinessCollage canvas {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+body.sadness-page {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+
+    background-color: #877c56;
+
+    background-image: url("Sad.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.sadness-page .sadness-collage,
+.sadness-page #sadnessOrbit {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.sadness-page #sadnessOrbit .sadness-orbit-card {
     position: absolute;
-    width: 22vw;
-    max-width: 300px;
-    max-height: 36vh;
-    object-fit: cover;
-    opacity: 0;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+
+    width: max-content;
+    height: max-content;
+    max-width: none;
+    max-height: none;
+
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+
     border: 5px solid rgba(220, 225, 232, 0.82);
+    background-color: #dce1e8;
+
     box-shadow: 0 14px 35px rgba(0, 0, 0, 0.68);
     filter: saturate(0.72) brightness(0.84);
-    animation: sadness-appears 2.8s ease-out forwards;
+
+    opacity: 0;
+    transform-origin: center center;
+
+    animation: none;
+    transition: none;
 }
 
-.top-left {
-    top: 10vh;
-    left: 5vw;
-    transform: rotate(-5deg);
+.sadness-page #sadnessOrbit .sadness-orbit-card img {
+    display: block;
+    position: static;
+
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    opacity: 1;
+    transform: none;
+    filter: none;
+    box-shadow: none;
+
+    animation: none;
+    transition: none;
 }
 
-.top-right {
-    top: 10vh;
-    right: 5vw;
-    transform: rotate(4deg);
-}
-
-.right {
-    top: 40vh;
-    right: 3vw;
-    transform: rotate(6deg);
-}
-
-.bottom-right {
-    bottom: 6vh;
-    right: 8vw;
-    transform: rotate(-4deg);
-}
-
-.bottom-left {
-    bottom: 6vh;
-    left: 7vw;
-    transform: rotate(4deg);
-}
-
-.left {
-    top: 43vh;
-    left: 3vw;
-    transform: rotate(-6deg);
-}
-.sadness-text {
+.sadness-page .sadness-text {
     position: fixed;
     top: 5vh;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
+
+    width: 90%;
     margin: 0;
-    color: #edf0f5;
+    padding: 0;
+
+    color: #000;
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
+    font-weight: normal;
+    line-height: 1.4;
     letter-spacing: 3px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
-}
+    text-align: center;
 
-@keyframes sadness-appears {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 0.94;
-    }
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }

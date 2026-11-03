@@ -3,10 +3,7 @@ const items = [
   { src: "theeye.jpeg", type: "image", position: "still-top-right" },
   { src: "sandiego.jpeg", type: "image", position: "still-right" },
   { src: "la.jpeg", type: "image", position: "still-bottom-right" },
-  { src: "cherryblossom.jpeg", type: "image", position: "still-bottom-left" },
-  { src: "fallinlove.MOV", type: "video", position: "still-left" },
-  { src: "nurtureinnature.MOV", type: "video", position: "still-top-center" },
-  { src: "stillinmotion.MOV", type: "video", position: "still-bottom-center" }
+  { src: "cherryblossom.jpeg", type: "image", position: "still-bottom-left" }
 ];
 
 const collage = document.getElementById("collage");
