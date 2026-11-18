@@ -1,5 +1,5 @@
 body {
-  background-color: #d9d;
+  background-color: #b29;
   font-family: Helvetica, sans-serif;
 }
 
@@ -29,7 +29,7 @@ input {
 }
 
 .response{
-  background-color: #b29;
+  background-color: yellow;
   color:black;
   margin:0.2em;
   padding: 1em;
