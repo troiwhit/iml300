@@ -1,44 +1,425 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Troi's Homepage</title>
-    <!--Update with your name-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Troi Whitaker | Creative Archive</title>
+
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/eda6zir.css" />
+
+    <!-- Your website styles -->
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div>
-      <h1>Troi Whitaker</h1>
-      <!--Update with your name-->
-      <p>
-        This is my website for <i>IML300 class</i>. I'm very new to code...obviously, but I want to get better and I hope my improvement is captured here.
-      </p>
-    </div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div>
-      <h1>Major Projects</h1>
-      <h2>Project 1: Interactive Audio & Visual with p5.js</h2>
-      <a href="">Final: Lorem Ipsum</a>
-      <h2>Project 2: HyperNarrative</h2>
-      <a href="">Concept</a><br />
-      <a href="">Final: Lorem Ipsum</a>
-      <h2>Project 3: Networked Care</h2>
-      <a href="">Final: Lorem Ipsum</a>
-    </div>
+    <!-- LEFT-SIDE NAVIGATION -->
+    <aside class="sidebar">
+      <a class="site-name" href="#about">Troi Whitaker</a>
 
-    <div>
-      <h1>Exercises</h1>
-      <ul>
-        <li><a href="">p5.js sketch 1</a></li>
-        <li><a href="">p5.js sketch 2</a></li>
-        <li><a href="">p5.js sketch 3</a></li>
-        <li><a href="">p5.js sketch 4</a></li>
-      </ul>
-    </div>
+      <nav aria-label="Main navigation">
+        <a href="#about">Home / About</a>
+        <a href="#projects">Projects</a>
+        <a href="#exercises">p5.js Exercises</a>
+        <a href="#vibe-coding">Vibe Coding Experiments</a>
+      </nav>
 
-    <!--add a h1 element called 'Thoughts' Below-->
-    <h1>Thoughts</h1>
+      <p class="sidebar-note">IML300 · Fall 2026</p>
+    </aside>
 
-    <footer>Fall, 2025.</footer>
+    <main id="main-content">
+      <!-- FULL-SCREEN NAME -->
+      <section id="about" class="name-screen" aria-labelledby="name-title">
+        <h1 id="name-title" class="giant-name">
+          <span>TROI</span>
+          <span>WHITAKER</span>
+        </h1>
+      </section>
+
+      <!-- INTRODUCTION BELOW THE NAME -->
+      <section id="creative-archive" class="section archive-intro" aria-labelledby="archive-title">
+        <div class="hero-content">
+          <p class="eyebrow">IML300 · Creative Portfolio</p>
+
+          <h2 id="archive-title">My Creative Archive</h2>
+
+          <p class="intro">
+            Hi! I’m Troi, a student and creative practitioner exploring dance, film, and multimedia art. This website
+            collects my interactive stories, creative coding experiments, and digital projects for IML300. I’m
+            interested in how movement, images, sound, and interaction can tell stories and create connections.
+          </p>
+
+          <a class="button" href="#projects"> Explore My Projects ↗ </a>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <header class="section-heading">
+          <h2 id="projects-title">Projects</h2>
+          <p>Interactive experiments, stories, and creative explorations.</p>
+        </header>
+
+        <!-- PROJECT 1 -->
+        <article class="project-card">
+          <div class="project-copy">
+            <p class="eyebrow">Project 01 · Interactive Audio + Visual</p>
+
+            <h3>What Are You Listening To?</h3>
+
+            <p>
+              An interactive audio-visual fashion collage inspired by the TikTok trend of imagining what someone listens
+              to based on their outfit. I took some screenshots of some different outfits/aesthitics and grouped each
+              one into groups: "bohemian," "goth," and "simple/clean-girl." I input three different songs that I thought
+              reflected each aesthetic. Each song hovers over its corresponding aesthetic in the form of an audio wave
+              buttion that you can click.
+            </p>
+
+            <a
+              class="button"
+              href="https://editor.p5js.org/troiwhit/sketches/abqVaVBrQ"
+              target="_blank"
+              rel="noopener noreferrer">
+              Open Project 1 in p5.js ↗
+            </a>
+          </div>
+
+          <div class="project-preview">
+            <iframe
+              title="What Are You Listening To? interactive project"
+              src="https://editor.p5js.org/troiwhit/sketches/abqVaVBrQ"
+              loading="lazy"
+              allow="autoplay; fullscreen"></iframe>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project-card">
+          <div class="project-copy">
+            <p class="eyebrow">Project 02 · Hypernarrative</p>
+
+            <h3>The Sunken Place</h3>
+
+            <p>
+              Originally inspired by the Sunken Place sequence in Jordan Peele's "Get Out" specifically regarding the
+              main character, Chris, and his fractured consiousness. However, for this project I made it more personal
+              and invited users inside my own fractured consciousness while also posiitoning them as an observer. The
+              user enocunters my memories and images from my life from a distance, creating that feeling of being
+              separated from your own body and unable to intervene with what happens to it. There is no story to solve,
+              but each choice reveals separate pieces of the same psychological experience -- being conscious, watching,
+              remembering, but still not able to act.
+            </p>
+
+            <a
+              class="button"
+              href="https://troiwhit.github.io/iml300/project-2/index.html"
+              target="_blank"
+              rel="noopener noreferrer">
+              Visit Project 2 ↗
+            </a>
+          </div>
+
+          <div class="project-preview">
+            <iframe
+              title="Project 2 interactive website"
+              src="https://troiwhit.github.io/iml300/project-2/index.html"
+              loading="lazy"
+              allow="autoplay; fullscreen"></iframe>
+          </div>
+        </article>
+
+        <!-- PECHA KUCHA PRESENTATION -->
+        <div class="presentation">
+          <h3>Pecha Kucha Presentation</h3>
+          <p>Add your presentation title and link here if you have completed it.</p>
+
+          <a class="text-link" aria-disabled="true"> View Presentation — Coming Soon </a>
+        </div>
+      </section>
+
+      <!-- P5.JS EXERCISES -->
+      <section id="exercises" class="section" aria-labelledby="exercises-title">
+        <header class="section-heading">
+          <p class="eyebrow">Creative Coding Practice</p>
+          <h2 id="exercises-title">p5.js Exercises</h2>
+          <p>A collection of sketches and experiments made with p5.js.</p>
+        </header>
+
+        <div class="exercise-grid">
+          <!-- EXERCISE 1 -->
+          <article class="exercise-card">
+            <h3>Exercise 1</h3>
+
+            <iframe
+              title="Exercise 1 interactive sketch"
+              src="https://editor.p5js.org/troiwhit/sketches/EOu9XsfFG"
+              loading="lazy"
+              allow="autoplay; fullscreen"></iframe>
+
+            <a
+              class="text-link"
+              href="https://editor.p5js.org/troiwhit/sketches/EOu9XsfFG"
+              target="_blank"
+              rel="noopener noreferrer">
+              Open in p5.js Editor ↗
+            </a>
+          </article>
+
+          <!-- EXERCISE 2 -->
+          <article class="exercise-card">
+            <h3>Exercise 2</h3>
+
+            <iframe
+              title="Exercise 1 interactive sketch"
+              src="https://editor.p5js.org/troiwhit/sketches/DVcZMN5WO"
+              loading="lazy"
+              allow="autoplay; fullscreen"></iframe>
+
+            <a
+              class="text-link"
+              href="https://editor.p5js.org/troiwhit/sketches/DVcZMN5WO"
+              target="_blank"
+              rel="noopener noreferrer">
+              Open in p5.js Editor ↗
+            </a>
+          </article>
+
+          <!-- EXERCISE 3 -->
+          <article class="exercise-card">
+            <h3>Exercise 3</h3>
+
+            <iframe
+              title="Exercise 1 interactive sketch"
+              src="https://editor.p5js.org/troiwhit/sketches/ywc7q2VI0"
+              loading="lazy"
+              allow="autoplay; fullscreen"></iframe>
+            <a
+              class="text-link"
+              href="https://editor.p5js.org/troiwhit/sketches/ywc7q2VI0"
+              target="_blank"
+              rel="noopener noreferrer">
+              Open in p5.js Editor ↗
+            </a>
+          </article>
+
+          <!-- EXERCISE 4 -->
+          <article class="exercise-card">
+            <h3>Exercise 4</h3>
+
+            <iframe
+              title="Exercise 1 interactive sketch"
+              src="https://editor.p5js.org/troiwhit/sketches/F312rhVXf"
+              loading="lazy"
+              allow="autoplay; fullscreen"></iframe>
+            <a
+              class="text-link"
+              href="https://editor.p5js.org/troiwhit/sketches/F312rhVXf"
+              target="_blank"
+              rel="noopener noreferrer">
+              Open in p5.js Editor ↗
+            </a>
+          </article>
+
+          <!-- EXERCISE 5 -->
+          <article class="exercise-card">
+            <h3>Exercise 5</h3>
+
+            <iframe
+              title="Exercise 1 interactive sketch"
+              src="https://editor.p5js.org/troiwhit/sketches/vbSLQL5Mm"
+              loading="lazy"
+              allow="autoplay; fullscreen"></iframe>
+            <a
+              class="text-link"
+              href="https://editor.p5js.org/troiwhit/sketches/vbSLQL5Mm"
+              target="_blank"
+              rel="noopener noreferrer">
+              Open in p5.js Editor ↗
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- VIBE CODING EXPERIMENTS -->
+      <section id="vibe-coding" class="section" aria-labelledby="vibe-title">
+        <header class="section-heading">
+          <p class="eyebrow">Play + Exploration</p>
+          <h2 id="vibe-title">Vibe Coding Experiments</h2>
+          <p>Small websites, playful ideas, and experiments with code.</p>
+        </header>
+
+        <div class="experiment-grid">
+          <!-- EXPERIMENT 1 -->
+          <article class="experiment-card">
+            <div class="experiment-thumbnail">
+              <img src="assets/slate.png" alt="Screenshot of the SLATE Movement Casting website" />
+            </div>
+
+            <div class="experiment-copy">
+              <h3>SLATE Movement Casting</h3>
+              <p>
+                I used Claude.ai to create a website tool for dance/talent agencies to connect movement artists with
+                directors and choreographers for the projects they need dancers for. The website is called SLATE
+                Movement Casting. It would almost act as the talent agent with programmed scouting, matching, and
+                assessing dancers' movement styles to match with a creative project's vision.
+              </p>
+
+              <a
+                class="text-link"
+                href="https://claude.ai/public/artifacts/4532430f-2ca3-4be0-b1d7-864044b97380"
+                target="_blank"
+                rel="noopener noreferrer">
+                Visit Website
+              </a>
+            </div>
+          </article>
+
+          <!-- EXPERIMENT 2 -->
+          <article class="experiment-card">
+            <div class="experiment-thumbnail">
+              <img src="assets/unproductive.png" alt="Screenshot of The Unproductive Desktop website" />
+            </div>
+
+            <div class="experiment-copy">
+              <h3>The Unproductive Desktop</h3>
+              <p>
+                I read American Artist's "Black Gooey Universe" and prompted Claude.ai to make an interface where
+                attempts at efficiency create opacity, friction, and refusal rather than successful completion. It's
+                called "The Unproductive Desktop" and it begins as a clean productivity dashboard, but each click
+                releases black residue that covers buttons, reverses progress, and replaces tasks with questions. What
+                happens when a productivity system doesn't treat speed, control, cleanliness, and completion as neutral?
+                Refusing productivity is also a way to use a computer.
+              </p>
+
+              <a
+                class="text-link"
+                href="https://unproductivity-art.lovable.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Visit Website
+              </a>
+            </div>
+          </article>
+
+          <!-- EXPERIMENT 3 -->
+          <article class="experiment-card">
+            <div class="experiment-thumbnail">
+              <img src="assets/softindex.png" alt="Screenshot of The Soft Index website" />
+            </div>
+
+            <div class="experiment-copy">
+              <h3>Soft Index</h3>
+              <p>
+                This website is meant to articulate Laurel Schwulst's idea that a website can be an evolving, personal,
+                self-authored space that's shaped by curiosity, exploration, and change. "Soft Index" is a website where
+                users can always reorganize the page, becoming part of the architecture of the website themselves.
+              </p>
+
+              <a
+                class="text-link"
+                href="https://claude.ai/public/artifacts/a00c24eb-8032-4cc2-bf8f-974eef747238"
+                target="_blank"
+                rel="noopener noreferrer">
+                Visit Website
+              </a>
+            </div>
+          </article>
+
+          <!-- EXPERIMENT 4 -->
+          <article class="experiment-card">
+            <div class="experiment-thumbnail">
+              <img src="assets/multitudes.png" alt="Screenshot of We Contain Multitudes website" />
+            </div>
+
+            <div class="experiment-copy">
+              <h3>We Contain Multitudes</h3>
+              <p>
+                I was inspired by Chimamanda Ngozi Adichie's TED Talk "The Danger of a Single Story." In my previous
+                work, I've actually dealt with this topic, specifically regarding the consequent dangers darker-skinned
+                Black women endure at the hands of media's very monolithic representation of them. In film and
+                television, darker-skinned Black women are cast as the side character, subservient, angry, sad,
+                perpetually hard-working, gripped with trauma, etc. And although, these can be our realities, we are
+                more than just that. We are also lively, vulnerable, soft, silly, capable of love, affectionate, warm,
+                and could very much be the center of a story. This experiment is called "We Contain Multitudes" and
+                would start off with a collage of images of darker-skinned Black women in the roles they have been
+                regulated to. When you press, "Look Beyond the Frame," the initial collage is disrupted with other
+                images of darker-skinned women that combat the monolithic ones from before.
+              </p>
+
+              <a
+                class="text-link"
+                href="https://pixel-perfect-render-84986.lovable.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Visit Website
+              </a>
+            </div>
+          </article>
+
+          <!-- EXPERIMENT 5 -->
+          <article class="experiment-card">
+            <div class="experiment-thumbnail">
+              <img src="assets/year0.png" alt="Screenshot of Year Zero website" />
+            </div>
+
+            <div class="experiment-copy">
+              <h3>Year Zero</h3>
+              <p>
+                For this experiment, I wanted to explore how a digital creature can transform while still keeping traces
+                of its past. I was inspired by Auriea Harvey's "Year Zero" that explores transformation, memory,
+                mythology, and the distinction between physical and digital worlds. I'm interested in blending organic
+                and sculptural forms so users can shape an evolving artwork through interaction rather than following a
+                fixed narrative.
+              </p>
+
+              <a
+                class="text-link"
+                href="https://echo-form-memory.lovable.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Visit Website
+              </a>
+            </div>
+          </article>
+
+          <!-- EXPERIMENT 6 -->
+          <article class="experiment-card">
+            <div class="experiment-thumbnail">
+              <img src="assets/blck4sale.png" alt="Screenshot of Blackness for Sale website" />
+            </div>
+
+            <div class="experiment-copy">
+              <h3>Blackness for Sale</h3>
+              <p>
+                Inspired by Mendi + Keith Obadike's "Blackness for Sale. Similar to how they created a listing on ebay
+                for their "Blackness heirloom," I prompted Loveable.ai to build an advertisement for a purchasable
+                "Blackness," presenting its benefits through bright colors and exciting promotional language. The
+                warnings, however, appear in small red lettering like how some ads minimize a product's drawbacks. I
+                wanted to explore the contradiction between celebrating Black identity and Black contributions to
+                mainstream culture as desirable commodities while treating the actual Black body and community unfairly.
+                The website asks viewers to confront what consumer culture highlights, appropriates, and deliberately
+                pushes out of sight.
+              </p>
+
+              <a
+                class="text-link"
+                href="https://fine-print-fiction.lovable.app/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Visit Website
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>Troi Whitaker · IML300 · Fall 2026</p>
+        <a href="#about">Back to Top ↑</a>
+      </footer>
+    </main>
   </body>
 </html>

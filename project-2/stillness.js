@@ -2,8 +2,7 @@ const items = [
   { src: "moncalvocity.jpeg", type: "image", position: "still-top-left" },
   { src: "theeye.jpeg", type: "image", position: "still-top-right" },
   { src: "sandiego.jpeg", type: "image", position: "still-right" },
-  { src: "la.jpeg", type: "image", position: "still-bottom-right" },
-  { src: "cherryblossom.jpeg", type: "image", position: "still-bottom-left" }
+  { src: "la.jpeg", type: "image", position: "still-bottom-right" }
 ];
 
 const collage = document.getElementById("collage");
